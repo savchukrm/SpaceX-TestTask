@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Syne';
+  src: url('./assets/fonts/Syne-Regular.ttf') format('truetype');
+  font-weight: 400;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Syne';
+  src: url('./assets/fonts/Syne-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('./assets/fonts/Syne-Bold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('./assets/fonts/Syne-SemiBold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('./assets/fonts/Syne-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+body {
+  margin: 0;
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
 }
