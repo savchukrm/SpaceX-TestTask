@@ -30,6 +30,7 @@ const IconContainer = styled.div`
   gap: 10px;
   flex-shrink: 0;
   background: #ececec;
+  cursor: pointer;
 `;
 
 const IconArrowContainer = styled.div`
@@ -40,4 +41,5 @@ const IconArrowContainer = styled.div`
   background: #ececec;
   height: 44px;
   width: 44px;
+  cursor: pointer;
 `;
