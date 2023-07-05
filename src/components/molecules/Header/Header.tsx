@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import Logo from '../../atoms/Logo/Logo';
 import Icon from '../../atoms/Icon/Icon';
-import Button from '../../atoms/Button/Button';
 import NavButton from '../../atoms/NavButton/NavButton';
+import { SignInButton } from '../../atoms/Button/Button';
 
 // @ts-ignore
 import heartIcon from '../../../assets/images/heart.svg';
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
 
       <ActionsContainer>
         <Icon imgUrl={heartIcon} act={null} />
-        <Button text="Sign In" />
+        <SignInButton text="Sign In" />
       </ActionsContainer>
     </HeaderContainer>
   );
