@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { ExploreTourButton } from '../../atoms/Button/Button';
-import Title from '../../atoms/Title/Title';
+import { MainTitle } from '../../atoms/Title/Title';
 
 // @ts-ignore
 import back1 from '../../../assets/images/back1.svg';
@@ -28,7 +28,7 @@ const Banner = () => {
       style={{ backgroundImage: `url(${photos[currentPhotoIndex]})` }}
     >
       <ContentContainer>
-        <Title />
+        <MainTitle />
         <ExploreTourButton text="Explore Tours" />
       </ContentContainer>
     </BannerContainer>

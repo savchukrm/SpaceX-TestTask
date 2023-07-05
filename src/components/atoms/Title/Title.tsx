@@ -1,16 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Title = () => {
+export const MainTitle = () => {
   return (
-    <TitleContainer>
+    <MainTitleContainer>
       <H5>the space is waiting for</H5>
       <H1>you</H1>
-    </TitleContainer>
+    </MainTitleContainer>
   );
 };
 
-const TitleContainer = styled.div`
+export const FavTitle = () => {
+  return (
+    <FavTitleContainer>
+      <H3>favourites</H3>
+    </FavTitleContainer>
+  );
+};
+
+const MainTitleContainer = styled.div`
   text-align: center;
   color: #fff;
   font-family: Syne;
@@ -34,4 +42,15 @@ const H1 = styled.h1`
   font-weight: 800;
 `;
 
-export default Title;
+const FavTitleContainer = styled.div`
+  text-align: center;
+  color: #fff;
+  font-family: Syne;
+`;
+
+const H3 = styled.h3`
+  margin: 0;
+  font-size: 48px;
+  font-weight: 800;
+  text-transform: uppercase;
+`;

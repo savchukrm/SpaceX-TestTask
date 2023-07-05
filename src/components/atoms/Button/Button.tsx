@@ -25,11 +25,16 @@ export const CardButton: React.FC<ButtonProps> = ({ text }) => {
   return <CardButtonElement>{text}</CardButtonElement>;
 };
 
+export const ClearAllButton = () => {
+  return <ClearAllElement>Clear all</ClearAllElement>;
+};
+
 const BaseButton = styled.button`
   border: none;
   display: flex;
   justify-content: center;
   text-transform: uppercase;
+  cursor: pointer;
 `;
 
 const SignInElement = styled(BaseButton)`
@@ -56,4 +61,14 @@ const CardButtonElement = styled(BaseButton)`
   font-size: 24px;
   font-family: Syne;
   font-weight: 600;
+`;
+
+const ClearAllElement = styled.button`
+  color: #556b84;
+  font-size: 24px;
+  font-family: Lato;
+  font-weight: 300;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 `;
