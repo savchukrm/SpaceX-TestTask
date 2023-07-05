@@ -15,10 +15,15 @@ const NavButtonElement = styled.button`
   font-size: 16px;
   font-family: Lato;
   font-weight: 400;
-  line-height: normal;
   text-transform: uppercase;
   border: none;
   background: transparent;
+  cursor: pointer;
+  padding: 0 0 4px 0;
+
+  &:hover {
+    border-bottom: 2px solid #fff;
+  }
 `;
 
 export default NavButton;

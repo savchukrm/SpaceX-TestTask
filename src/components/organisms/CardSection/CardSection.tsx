@@ -20,45 +20,47 @@ import heartIcon from '../../../assets/images/heart.svg';
 
 const CardsSection = () => {
   return (
-    <SectionContainer>
-      <CardSectionHeader>
-        <Title>popular tours</Title>
+    <div id="cards-section">
+      <SectionContainer>
+        <CardSectionHeader>
+          <Title>popular tours</Title>
 
-        <ButtonsContainer>
-          <IconArrow imgUrl={arrowLeft} act={undefined} />
-          <IconArrow imgUrl={arrowRight} act={undefined} />
-        </ButtonsContainer>
-      </CardSectionHeader>
+          <ButtonsContainer>
+            <IconArrow imgUrl={arrowLeft} act={undefined} />
+            <IconArrow imgUrl={arrowRight} act={undefined} />
+          </ButtonsContainer>
+        </CardSectionHeader>
 
-      <CardsContainer>
-        <Card
-          imageSrc={photo1}
-          title="Extraordinary tour"
-          description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-          icon={heartIcon}
-        />
-        <Card
-          imageSrc={photo2}
-          title="Extraordinary tour"
-          description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-          icon={heartIcon}
-        />
-        <Card
-          imageSrc={photo3}
-          title="Extraordinary tour"
-          description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-          icon={heartIcon}
-        />
-      </CardsContainer>
+        <CardsContainer>
+          <Card
+            imageSrc={photo1}
+            title="Extraordinary tour"
+            description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            icon={heartIcon}
+          />
+          <Card
+            imageSrc={photo2}
+            title="Extraordinary tour"
+            description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            icon={heartIcon}
+          />
+          <Card
+            imageSrc={photo3}
+            title="Extraordinary tour"
+            description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            icon={heartIcon}
+          />
+        </CardsContainer>
 
-      <Pagination />
-    </SectionContainer>
+        <Pagination />
+      </SectionContainer>
+    </div>
   );
 };
 
 const SectionContainer = styled.div`
   width: 1281px;
-  margin: 0 auto;
+  margin: 100px auto;
 `;
 
 const CardSectionHeader = styled.div`

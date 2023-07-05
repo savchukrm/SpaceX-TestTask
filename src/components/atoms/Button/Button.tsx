@@ -8,14 +8,20 @@ interface ButtonProps {
   text: string;
 }
 
+interface ExploreTourButtonProps {
+  onClick: () => void;
+}
+
 export const SignInButton: React.FC<ButtonProps> = ({ text }) => {
   return <SignInElement>{text}</SignInElement>;
 };
 
-export const ExploreTourButton: React.FC<ButtonProps> = ({ text }) => {
+export const ExploreTourButton: React.FC<ExploreTourButtonProps> = ({
+  onClick,
+}) => {
   return (
-    <ExploreTourElement>
-      {text}
+    <ExploreTourElement onClick={onClick}>
+      Explore Tours
       <img src={ArrowDown} alt="arrow-down" />
     </ExploreTourElement>
   );
@@ -33,13 +39,17 @@ const BaseButton = styled.button`
   border: none;
   display: flex;
   justify-content: center;
-  text-transform: uppercase;
+  align-items: center;
   cursor: pointer;
 `;
 
 const SignInElement = styled(BaseButton)`
   background: #d3eaff;
-  color: #000;
+  width: 163px;
+  font-size: 24px;
+  font-family: Syne;
+  font-weight: 600;
+  text-transform: uppercase;
 `;
 
 const ExploreTourElement = styled(BaseButton)`
@@ -50,6 +60,7 @@ const ExploreTourElement = styled(BaseButton)`
   background: transparent;
   gap: 8px;
   margin: 0 auto;
+  cursor: pointer;
 `;
 
 const CardButtonElement = styled(BaseButton)`

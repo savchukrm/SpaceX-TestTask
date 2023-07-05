@@ -15,13 +15,20 @@ const Banner = () => {
   const photos = [back1, back2, back3];
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
-    }, 5000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
+  //   }, 500000);
 
-    return () => clearInterval(interval);
-  }, [photos.length]);
+  //   return () => clearInterval(interval);
+  // }, [photos.length]);
+
+  const handleScroll = () => {
+    const cardsSection = document.getElementById('cards-section');
+    if (cardsSection) {
+      cardsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <BannerContainer
@@ -29,7 +36,7 @@ const Banner = () => {
     >
       <ContentContainer>
         <MainTitle />
-        <ExploreTourButton text="Explore Tours" />
+        <ExploreTourButton onClick={handleScroll} />
       </ContentContainer>
     </BannerContainer>
   );
