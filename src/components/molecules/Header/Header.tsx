@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Logo from '../../atoms/Logo/Logo';
-import Icon from '../../atoms/Icon/Icon';
+import { Icon } from '../../atoms/Icon/Icon';
 import NavButton from '../../atoms/NavButton/NavButton';
 import { SignInButton } from '../../atoms/Button/Button';
 
@@ -22,7 +22,7 @@ const Header: React.FC = () => {
       </Navbar>
 
       <ActionsContainer>
-        <Icon imgUrl={heartIcon} act={null} />
+        <Icon imgUrl={heartIcon} act={undefined} />
         <SignInButton text="Sign In" />
       </ActionsContainer>
     </HeaderContainer>

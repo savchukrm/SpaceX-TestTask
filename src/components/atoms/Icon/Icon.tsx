@@ -2,15 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface IconProps {
-  act: string | null;
-  imgUrl: string;
+  act: string | undefined;
+  imgUrl: string | undefined;
 }
 
-const Icon: React.FC<IconProps> = ({ act, imgUrl }) => {
+export const Icon: React.FC<IconProps> = ({ act, imgUrl }) => {
   return (
     <IconContainer>
-      <IconImage src={imgUrl} alt="Icon" />
+      <img src={imgUrl} alt={act} />
     </IconContainer>
+  );
+};
+
+export const IconArrow: React.FC<IconProps> = ({ act, imgUrl }) => {
+  return (
+    <IconArrowContainer>
+      <img src={imgUrl} alt={act} />
+    </IconArrowContainer>
   );
 };
 
@@ -24,10 +32,12 @@ const IconContainer = styled.div`
   background: #ececec;
 `;
 
-const IconImage = styled.img`
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+const IconArrowContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #ececec;
+  height: 44px;
+  width: 44px;
 `;
-
-export default Icon;

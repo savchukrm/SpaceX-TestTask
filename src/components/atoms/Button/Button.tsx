@@ -26,10 +26,10 @@ export const CardButton: React.FC<ButtonProps> = ({ text }) => {
 };
 
 const BaseButton = styled.button`
+  border: none;
   display: flex;
   justify-content: center;
-  gap: 10px;
-  border: none;
+  text-transform: uppercase;
 `;
 
 const SignInElement = styled(BaseButton)`
@@ -48,6 +48,12 @@ const ExploreTourElement = styled(BaseButton)`
 `;
 
 const CardButtonElement = styled(BaseButton)`
-  background: #e6e6e6;
-  color: #777;
+  width: 278px;
+  padding: 12px 0px;
+
+  background: #d3eaff;
+
+  font-size: 24px;
+  font-family: Syne;
+  font-weight: 600;
 `;
