@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+
 import { useQuery, QueryResult } from '@apollo/client';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+
 import { GET_ROCKETS } from '../../../utils/queries';
 
 import Card from '../../molecules/Card/Card';
-import Pagination from '../../molecules/Pagination/Pagination';
 import { IconArrow } from '../../atoms/Icon/Icon';
 
 // @ts-ignore
@@ -74,8 +77,8 @@ const CardsSection: React.FC = () => {
           </ButtonsContainer>
         </CardSectionHeader>
 
-        <CardsContainer>
-          {rockets.map((rocket: Rocket, index: number) => (
+        <AliceCarousel
+          items={rockets.map((rocket: Rocket, index: number) => (
             <Card
               key={rocket.id}
               imageSrc={getImageForIndex(index)}
@@ -84,9 +87,16 @@ const CardsSection: React.FC = () => {
               icon={heartIcon}
             />
           ))}
-        </CardsContainer>
-
-        <Pagination />
+          responsive={{
+            0: { items: 1 },
+            768: { items: 3 },
+          }}
+          controlsStrategy="responsive"
+          disableButtonsControls
+          infinite
+          autoPlay
+          animationDuration={2000}
+        />
       </SectionContainer>
     </div>
   );
@@ -101,6 +111,7 @@ const CardSectionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
 `;
 
 const Title = styled.h2`
@@ -108,14 +119,6 @@ const Title = styled.h2`
   font-size: 32px;
   font-weight: 800;
   text-transform: uppercase;
-`;
-
-const CardsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 24px;
-
-  margin: 40px 0;
 `;
 
 const ButtonsContainer = styled.div`
