@@ -2,10 +2,8 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-// @ts-ignore
-import blackHeart from '../../../assets/images/heart.svg';
-// @ts-ignore
-import whiteHeart from '../../../assets/images/whiteHeart.svg';
+import blackHeart from '../../../assets/images/blackheart.png';
+import whiteHeart from '../../../assets/images/whiteheart.png';
 
 interface IconProps {
   imgUrl: string;

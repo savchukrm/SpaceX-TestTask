@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// @ts-ignore
-import ArrowDown from '../../../assets/images/arrowdown.svg';
+import ArrowDown from '../../../assets/images/ArrowDown.png';
 
 interface ButtonProps {
   text: string;

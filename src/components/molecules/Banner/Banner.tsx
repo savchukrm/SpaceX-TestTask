@@ -4,12 +4,9 @@ import styled from 'styled-components';
 import { ExploreTourButton } from '../../atoms/Button/Button';
 import { MainTitle } from '../../atoms/Title/Title';
 
-// @ts-ignore
-import back1 from '../../../assets/images/back1.svg';
-// @ts-ignore
-import back2 from '../../../assets/images/back2.svg';
-// @ts-ignore
-import back3 from '../../../assets/images/back3.svg';
+import back1 from '../../../assets/images/Property1.png';
+import back2 from '../../../assets/images/Property2.png';
+import back3 from '../../../assets/images/Property3.png';
 
 const Banner = () => {
   const photos = [back1, back2, back3];

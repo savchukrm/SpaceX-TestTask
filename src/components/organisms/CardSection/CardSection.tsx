@@ -14,16 +14,11 @@ import Card from '../../molecules/Card/Card';
 import { CardData } from '../../../utils/types';
 import { IconArrow } from '../../atoms/Icon/Icon';
 
-// @ts-ignore
-import photo1 from '../../../assets/images/card1.svg';
-// @ts-ignore
-import photo2 from '../../../assets/images/card2.svg';
-// @ts-ignore
-import photo3 from '../../../assets/images/card3.svg';
-// @ts-ignore
-import arrowLeft from '../../../assets/images/arrowleft.svg';
-// @ts-ignore
-import arrowRight from '../../../assets/images/arrowright.svg';
+import photo1 from '../../../assets/images/card1.png';
+import photo2 from '../../../assets/images/card2.png';
+import photo3 from '../../../assets/images/card3.png';
+import arrowLeft from '../../../assets/images/Arrow-left.png';
+import arrowRight from '../../../assets/images/Arrow-right.png';
 
 interface Rocket {
   id: string;

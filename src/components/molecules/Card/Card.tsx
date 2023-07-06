@@ -7,10 +7,8 @@ import { favoriteCardsState } from '../../../recoil/atom';
 import { CardButton } from '../../atoms/Button/Button';
 import { Icon } from '../../atoms/Icon/Icon';
 
-// @ts-ignore
-import heartIcon from '../../../assets/images/heart.svg';
-// @ts-ignore
-import deleteIcon from '../../../assets/images/delete.svg';
+import heartIcon from '../../../assets/images/blackheart.png';
+import deleteIcon from '../../../assets/images/delete.png';
 
 export interface CardProps {
   imageSrc: string;

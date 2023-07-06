@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 import { FavTitle } from '../../atoms/Title/Title';
 
-// @ts-ignore
-import background from '../../../assets/images/favbackground.svg';
+import background from '../../../assets/images/favBack.png';
 
 const FavBackground = () => {
   return (

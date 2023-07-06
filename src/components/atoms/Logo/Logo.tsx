@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// @ts-ignore
-import logoSvg from '../../../assets/images/logo.svg';
+import logoSvg from '../../../assets/images/logo.png';
 
 const LogoImage = styled.img`
   width: 229px;

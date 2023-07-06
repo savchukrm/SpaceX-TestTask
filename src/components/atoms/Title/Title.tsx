@@ -23,7 +23,7 @@ const MainTitleContainer = styled.div`
   color: #fff;
   font-family: Syne;
   text-transform: uppercase;
-  margin-top: 170px;
+  margin: 170px 0 40px;
 
   -webkit-user-select: none;
   -ms-user-select: none;
