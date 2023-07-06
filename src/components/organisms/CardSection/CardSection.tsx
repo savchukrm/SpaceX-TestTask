@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useQuery, QueryResult } from '@apollo/client';
+import { GET_ROCKETS } from '../../../utils/queries';
 
 import Card from '../../molecules/Card/Card';
 import Pagination from '../../molecules/Pagination/Pagination';
@@ -18,7 +20,48 @@ import arrowRight from '../../../assets/images/arrowright.svg';
 // @ts-ignore
 import heartIcon from '../../../assets/images/heart.svg';
 
-const CardsSection = () => {
+interface Rocket {
+  id: string;
+  description: string;
+  name: string;
+}
+
+interface RocketsData {
+  rockets: Rocket[];
+}
+
+const CardsSection: React.FC = () => {
+  const [rockets, setRockets] = useState<Rocket[]>([]);
+
+  const { loading, error, data }: QueryResult<RocketsData> =
+    useQuery<RocketsData>(GET_ROCKETS);
+
+  useEffect(() => {
+    if (data) {
+      setRockets(data.rockets);
+    }
+  }, [data]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>An error occurred: {error.message}</p>;
+  }
+
+  const getImageForIndex = (index: number): string => {
+    const designImages = [photo1, photo2, photo3];
+    const firstDesignImageIndex = index % 3;
+    const repeatingImageIndex = Math.floor(index / 3) % 3;
+
+    if (index < 3) {
+      return designImages[firstDesignImageIndex];
+    } else {
+      return designImages[repeatingImageIndex];
+    }
+  };
+
   return (
     <div id="cards-section">
       <SectionContainer>
@@ -32,24 +75,15 @@ const CardsSection = () => {
         </CardSectionHeader>
 
         <CardsContainer>
-          <Card
-            imageSrc={photo1}
-            title="Extraordinary tour"
-            description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-            icon={heartIcon}
-          />
-          <Card
-            imageSrc={photo2}
-            title="Extraordinary tour"
-            description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-            icon={heartIcon}
-          />
-          <Card
-            imageSrc={photo3}
-            title="Extraordinary tour"
-            description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-            icon={heartIcon}
-          />
+          {rockets.map((rocket: Rocket, index: number) => (
+            <Card
+              key={rocket.id}
+              imageSrc={getImageForIndex(index)}
+              title={rocket.name}
+              subtitle={rocket.description}
+              icon={heartIcon}
+            />
+          ))}
         </CardsContainer>
 
         <Pagination />

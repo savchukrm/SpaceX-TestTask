@@ -50,6 +50,11 @@ const SignInElement = styled(BaseButton)`
   font-family: Syne;
   font-weight: 600;
   text-transform: uppercase;
+
+  &:hover {
+    background: #859cb0;
+    color: #fff;
+  }
 `;
 
 const ExploreTourElement = styled(BaseButton)`

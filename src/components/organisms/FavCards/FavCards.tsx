@@ -12,7 +12,7 @@ import photo2 from '../../../assets/images/card2.svg';
 // @ts-ignore
 import photo3 from '../../../assets/images/card3.svg';
 // @ts-ignore
-import heartIcon from '../../../assets/images/heart.svg';
+import deleteIcon from '../../../assets/images/delete.svg';
 
 const FavCards = () => {
   return (
@@ -25,20 +25,20 @@ const FavCards = () => {
         <Card
           imageSrc={photo1}
           title="Extraordinary tour"
-          description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-          icon={heartIcon}
+          subtitle="Lorem ipsum dolor sit amet consectetur adipiscing elit"
+          icon={deleteIcon}
         />
         <Card
           imageSrc={photo2}
           title="Extraordinary tour"
-          description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-          icon={heartIcon}
+          subtitle="Lorem ipsum dolor sit amet consectetur adipiscing elit"
+          icon={deleteIcon}
         />
         <Card
           imageSrc={photo3}
           title="Extraordinary tour"
-          description="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-          icon={heartIcon}
+          subtitle="Lorem ipsum dolor sit amet consectetur adipiscing elit"
+          icon={deleteIcon}
         />
       </CardsContainer>
     </SectionContainer>
