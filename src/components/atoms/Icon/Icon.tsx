@@ -8,14 +8,18 @@ import blackHeart from '../../../assets/images/heart.svg';
 import whiteHeart from '../../../assets/images/whiteHeart.svg';
 
 interface IconProps {
-  act: string | undefined;
-  imgUrl: string | undefined;
+  imgUrl: string;
+  handleClick: () => void;
 }
 
-export const Icon: React.FC<IconProps> = ({ act, imgUrl }) => {
+interface IconArrowProps {
+  imgUrl: string;
+}
+
+export const Icon: React.FC<IconProps> = ({ handleClick, imgUrl }) => {
   return (
-    <IconContainer>
-      <img src={imgUrl} alt={act} />
+    <IconContainer onClick={handleClick}>
+      <img src={imgUrl} alt="icon" />
     </IconContainer>
   );
 };
@@ -31,10 +35,10 @@ export const IconFav: React.FC = () => {
   );
 };
 
-export const IconArrow: React.FC<IconProps> = ({ act, imgUrl }) => {
+export const IconArrow: React.FC<IconArrowProps> = ({ imgUrl }) => {
   return (
     <IconArrowContainer>
-      <img src={imgUrl} alt={act} />
+      <img src={imgUrl} alt="arrow" />
     </IconArrowContainer>
   );
 };
@@ -48,6 +52,10 @@ const IconContainer = styled.div`
   flex-shrink: 0;
   background: #ececec;
   cursor: pointer;
+
+  &:hover {
+    background: #82bbcd;
+  }
 `;
 
 const IconFavContainer = styled.div<{ isFavoritePage: boolean }>`

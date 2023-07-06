@@ -1,17 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { useSetRecoilState, useRecoilValue } from 'recoil';
+
+import { favoriteCardsState } from '../../../recoil/atom';
 import { CardButton } from '../../atoms/Button/Button';
 import { Icon } from '../../atoms/Icon/Icon';
 
-interface CardProps {
+// @ts-ignore
+import heartIcon from '../../../assets/images/heart.svg';
+// @ts-ignore
+import deleteIcon from '../../../assets/images/delete.svg';
+
+export interface CardProps {
   imageSrc: string;
   title: string;
   subtitle: string;
-  icon: string;
+  onAddToFavorites?: () => void;
+  onDeleteFromFavorites?: () => void;
+  isFavorite?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ imageSrc, title, subtitle, icon }) => {
+const Card: React.FC<CardProps> = ({
+  imageSrc,
+  title,
+  subtitle,
+  onAddToFavorites,
+  onDeleteFromFavorites,
+  isFavorite,
+}) => {
+  const setFavoriteCards = useSetRecoilState(favoriteCardsState);
+  const favoriteCards = useRecoilValue(favoriteCardsState);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite && onDeleteFromFavorites) {
+      onDeleteFromFavorites();
+    } else if (!isFavorite && onAddToFavorites) {
+      onAddToFavorites();
+    }
+  };
+
   return (
     <CardContainer>
       <CardImage src={imageSrc} alt="Card Image" />
@@ -24,7 +52,11 @@ const Card: React.FC<CardProps> = ({ imageSrc, title, subtitle, icon }) => {
 
         <ButtonSection>
           <CardButton text="Buy" />
-          <Icon imgUrl={icon} act={undefined} />
+          {isFavorite ? (
+            <Icon imgUrl={deleteIcon} handleClick={handleFavoriteClick} />
+          ) : (
+            <Icon imgUrl={heartIcon} handleClick={handleFavoriteClick} />
+          )}
         </ButtonSection>
       </CardContent>
     </CardContainer>

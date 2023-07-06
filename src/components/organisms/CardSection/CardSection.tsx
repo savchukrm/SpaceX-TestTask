@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { useQuery, QueryResult } from '@apollo/client';
+import { useSetRecoilState } from 'recoil';
+
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 import { GET_ROCKETS } from '../../../utils/queries';
+import { favoriteCardsState } from '../../../recoil/atom';
 
 import Card from '../../molecules/Card/Card';
+import { CardData } from '../../../utils/types';
 import { IconArrow } from '../../atoms/Icon/Icon';
 
 // @ts-ignore
@@ -20,8 +24,6 @@ import photo3 from '../../../assets/images/card3.svg';
 import arrowLeft from '../../../assets/images/arrowleft.svg';
 // @ts-ignore
 import arrowRight from '../../../assets/images/arrowright.svg';
-// @ts-ignore
-import heartIcon from '../../../assets/images/heart.svg';
 
 interface Rocket {
   id: string;
@@ -35,6 +37,7 @@ interface RocketsData {
 
 const CardsSection: React.FC = () => {
   const [rockets, setRockets] = useState<Rocket[]>([]);
+  const setFavoriteCards = useSetRecoilState(favoriteCardsState);
 
   const { loading, error, data }: QueryResult<RocketsData> =
     useQuery<RocketsData>(GET_ROCKETS);
@@ -65,6 +68,16 @@ const CardsSection: React.FC = () => {
     }
   };
 
+  const handleAddToFavorites = (rocket: Rocket) => {
+    const newFavoriteCard: CardData = {
+      id: rocket.id,
+      imageSrc: getImageForIndex(rockets.length),
+      title: rocket.name,
+      subtitle: rocket.description,
+    };
+    setFavoriteCards((prevCards) => [...prevCards, newFavoriteCard]);
+  };
+
   return (
     <div id="cards-section">
       <SectionContainer>
@@ -72,8 +85,8 @@ const CardsSection: React.FC = () => {
           <Title>popular tours</Title>
 
           <ButtonsContainer>
-            <IconArrow imgUrl={arrowLeft} act={undefined} />
-            <IconArrow imgUrl={arrowRight} act={undefined} />
+            <IconArrow imgUrl={arrowLeft} />
+            <IconArrow imgUrl={arrowRight} />
           </ButtonsContainer>
         </CardSectionHeader>
 
@@ -84,7 +97,8 @@ const CardsSection: React.FC = () => {
               imageSrc={getImageForIndex(index)}
               title={rocket.name}
               subtitle={rocket.description}
-              icon={heartIcon}
+              onAddToFavorites={() => handleAddToFavorites(rocket)}
+              isFavorite={false}
             />
           ))}
           responsive={{

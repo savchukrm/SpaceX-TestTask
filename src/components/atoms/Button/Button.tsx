@@ -8,7 +8,7 @@ interface ButtonProps {
   text: string;
 }
 
-interface ExploreTourButtonProps {
+interface ButtonActProps {
   onClick: () => void;
 }
 
@@ -16,9 +16,7 @@ export const SignInButton: React.FC<ButtonProps> = ({ text }) => {
   return <SignInElement>{text}</SignInElement>;
 };
 
-export const ExploreTourButton: React.FC<ExploreTourButtonProps> = ({
-  onClick,
-}) => {
+export const ExploreTourButton: React.FC<ButtonActProps> = ({ onClick }) => {
   return (
     <ExploreTourElement onClick={onClick}>
       Explore Tours
@@ -31,8 +29,8 @@ export const CardButton: React.FC<ButtonProps> = ({ text }) => {
   return <CardButtonElement>{text}</CardButtonElement>;
 };
 
-export const ClearAllButton = () => {
-  return <ClearAllElement>Clear all</ClearAllElement>;
+export const ClearAllButton: React.FC<ButtonActProps> = ({ onClick }) => {
+  return <ClearAllElement onClick={onClick}>Clear all</ClearAllElement>;
 };
 
 const BaseButton = styled.button`
