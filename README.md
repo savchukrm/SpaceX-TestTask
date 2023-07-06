@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# SpaceX Test Task WebSite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a test task single-page application built with React that showcases space travel tours offered by SpaceX. Users can explore different tours, add them to their favorites. The application utilizes TypeScript, Atomic Design pattern, React Apollo for fetching data from the SpaceX API, Recoil for state management of favorite flights on the frontend, and Styled Components for styling.
 
-## Available Scripts
+Live Demo:
+You can try the live demo of the application by visiting [https://space-x-test-task-iota.vercel.app/](https://space-x-test-task-iota.vercel.app/).
 
-In the project directory, you can run:
+Technologies Used:
 
-### `npm start`
+- React: A JavaScript library for building user interfaces.
+- TypeScript: Enhances code scalability, maintainability, and type safety.
+- Atomic Design Pattern: A methodology for designing and building scalable and reusable components.
+- React Apollo: A GraphQL client for React applications, used for fetching data from the SpaceX API.
+- Recoil: A state management library for React, used to manage the state of favorite flights on the frontend.
+- Styled Components: Allows for styling components with CSS-in-JS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+API:
+The application fetches tour data from the SpaceX API. The API provides information about different tours, including their titles, descriptions.
+[https://studio.apollographql.com/public/SpaceX-pxxbxen/variant/current/explorer](https://studio.apollographql.com/public/SpaceX-pxxbxen/variant/current/explorer)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Getting Started:
+To run the application on your local machine, follow these steps:
 
-### `npm test`
+1. Clone this repository to your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   git clone <repository-url>
+   ```
 
-### `npm run build`
+2. Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```
+   cd SpaceX-TestTask
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```
+   npm install
+   ```
 
-### `npm run eject`
+4. Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ```
+   npm start
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to access the application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Dependencies:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- @apollo/client: A GraphQL client for React applications, used to interact with the SpaceX API.
+- graphql: A library for working with GraphQL queries and schemas.
+- react-alice-carousel: A carousel component for React applications.
+- react-router-dom: A popular routing library for React applications.
+- recoil: A state management library for React, used to manage the state of favorite flights.
+- styled-components: Allows for styling components with CSS-in-JS.
+- typescript: A superset of JavaScript that adds static typing to the language.
