@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import logoSvg from '../../../assets/images/logo.png';
+//@ts-ignore
+import logoSvg from '../../../assets/images/SpaceX-White-Logo.svg';
 
 const LogoImage = styled.img`
-  width: 229px;
-  height: 42px;
+  width: 249px;
+  height: 52px;
 `;
 
 const Logo = () => {

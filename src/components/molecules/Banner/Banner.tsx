@@ -11,14 +11,19 @@ import back3 from '../../../assets/images/Property3.png';
 const Banner = () => {
   const photos = [back1, back2, back3];
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [fade, setFade] = useState(false);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
-  //   }, 500000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(true);
+      setTimeout(() => {
+        setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
+        setFade(false);
+      }, 100);
+    }, 6000);
 
-  //   return () => clearInterval(interval);
-  // }, [photos.length]);
+    return () => clearInterval(interval);
+  }, [photos.length]);
 
   const handleScroll = () => {
     const cardsSection = document.getElementById('cards-section');
@@ -29,7 +34,11 @@ const Banner = () => {
 
   return (
     <BannerContainer
-      style={{ backgroundImage: `url(${photos[currentPhotoIndex]})` }}
+      style={{
+        backgroundImage: `url(${photos[currentPhotoIndex]})`,
+        opacity: fade ? 0 : 1,
+        transition: 'opacity 0.5s ease-in-out',
+      }}
     >
       <ContentContainer>
         <MainTitle />
