@@ -43,14 +43,6 @@ const CardsSection: React.FC = () => {
     }
   }, [data]);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>An error occurred: {error.message}</p>;
-  }
-
   const getImageForIndex = (index: number): string => {
     const designImages = [photo1, photo2, photo3];
     const firstDesignImageIndex = index % 3;
