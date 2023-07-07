@@ -63,10 +63,10 @@ const CardsSection: React.FC = () => {
     }
   };
 
-  const handleAddToFavorites = (rocket: Rocket) => {
+  const handleAddToFavorites = (rocket: Rocket, index: number) => {
     const newFavoriteCard: CardData = {
       id: rocket.id,
-      imageSrc: getImageForIndex(rockets.length),
+      imageSrc: getImageForIndex(index),
       title: rocket.name,
       subtitle: rocket.description,
     };
@@ -92,7 +92,7 @@ const CardsSection: React.FC = () => {
               imageSrc={getImageForIndex(index)}
               title={rocket.name}
               subtitle={rocket.description}
-              onAddToFavorites={() => handleAddToFavorites(rocket)}
+              onAddToFavorites={() => handleAddToFavorites(rocket, index)}
               isFavorite={false}
             />
           ))}

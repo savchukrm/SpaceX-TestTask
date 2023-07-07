@@ -49,10 +49,10 @@ To run the application on your local machine, follow these steps:
 
 Dependencies:
 
-- @apollo/client: A GraphQL client for React applications, used to interact with the SpaceX API.
-- graphql: A library for working with GraphQL queries and schemas.
-- react-alice-carousel: A carousel component for React applications.
-- react-router-dom: A popular routing library for React applications.
-- recoil: A state management library for React, used to manage the state of favorite flights.
-- styled-components: Allows for styling components with CSS-in-JS.
-- typescript: A superset of JavaScript that adds static typing to the language.
+- `@apollo/client`: A GraphQL client for React applications, used to interact with the SpaceX API.
+- `graphql`: A library for working with GraphQL queries and schemas.
+- `react-alice-carousel`: A carousel component for React applications.
+- `react-router-dom`: A popular routing library for React applications.
+- `recoil`: A state management library for React, used to manage the state of favorite flights.
+- `styled-components`: Allows for styling components with CSS-in-JS.
+- `typescript`: A superset of JavaScript that adds static typing to the language.

@@ -19,7 +19,7 @@ const Banner = () => {
       setTimeout(() => {
         setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
         setFade(false);
-      }, 100);
+      }, 300);
     }, 6000);
 
     return () => clearInterval(interval);
@@ -37,7 +37,7 @@ const Banner = () => {
       style={{
         backgroundImage: `url(${photos[currentPhotoIndex]})`,
         opacity: fade ? 0 : 1,
-        transition: 'opacity 0.5s ease-in-out',
+        transition: 'opacity 1.9s ease-in-out',
       }}
     >
       <ContentContainer>

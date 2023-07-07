@@ -46,8 +46,6 @@ const IconContainer = styled.div`
   padding: 14px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
   background: #ececec;
   cursor: pointer;
 
@@ -61,8 +59,6 @@ const IconFavContainer = styled.div<{ isFavoritePage: boolean }>`
   padding: 14px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
   background: ${(props) => (props.isFavoritePage ? '#dd377d' : '#ececec')};
   cursor: pointer;
 `;

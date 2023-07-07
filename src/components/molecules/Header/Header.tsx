@@ -54,6 +54,7 @@ const Navbar = styled.nav`
 
 const ActionsContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 26px;
 `;
 

@@ -43,6 +43,7 @@ const BaseButton = styled.button`
 const SignInElement = styled(BaseButton)`
   background: #d3eaff;
   width: 163px;
+  height: 53px;
   font-size: 24px;
   font-family: Syne;
   font-weight: 600;
